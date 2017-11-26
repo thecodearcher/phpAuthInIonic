@@ -1,14 +1,49 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title>
-      Ionic Blank
+      Simple PHP Auth/MySQL
     </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="switchType()">
+        <ion-icon [name]="type=='login' ? 'person-add': 'person'"></ion-icon>
+        
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <ng-template [ngIf]="type=='signup'">
+ <p>Fill All Fields</p>
+  <ion-item>
+    <ion-label floating>Name</ion-label>
+    <ion-input [(ngModel)]='name' type="text"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Username</ion-label>
+    <ion-input [(ngModel)]='username' type="text"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Password</ion-label>
+    <ion-input [(ngModel)]='password' type="password"></ion-input>
+  </ion-item>
+
+  <button ion-button (click)="signup()" clear block>SIGNUP</button>
+</ng-template>
+  <ng-template [ngIf]="type=='login'">
+ <p>Fill All Fields</p>
+  <ion-item>
+    <ion-label floating>Username</ion-label>
+    <ion-input [(ngModel)]='username' type="text"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Password</ion-label>
+    <ion-input [(ngModel)]='password' type="password"></ion-input>
+  </ion-item>
+
+  <button ion-button (click)="login()" clear block>LOGIN</button>
+</ng-template>
+
+  <ion-label>{{info | uppercase}}</ion-label>
 </ion-content>
+

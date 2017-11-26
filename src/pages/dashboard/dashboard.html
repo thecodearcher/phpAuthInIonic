@@ -1,0 +1,30 @@
+
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>{{details?.name | uppercase}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<ion-list>
+  <ion-item>
+    <h2>User Id</h2>
+    <p>{{details?.id}}</p>
+  </ion-item>
+  <ion-item>
+    <h2>Full Name</h2>
+    <p>{{details?.name}}</p>
+  </ion-item>
+  <ion-item>
+    <h2>Username</h2>
+    <p>{{details?.username}}</p>
+  </ion-item>
+  <ion-item>
+    <h2>Password</h2>
+    <p>{{details?.password}}</p>
+  </ion-item>
+</ion-list>
+</ion-content>
